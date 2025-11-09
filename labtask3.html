@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donation Page</title>
+  <link rel="stylesheet" href="labtask3.css" />
+</head>
+<body>
+  <form action="" method="POST" id="donationForm">
+    <h2>Donor Information</h2>
+
+    <label for="donor-firstname">First Name:</label>
+    <input type="text" id="donor-firstname" name="donor-firstname" required>
+
+    <label for="donor-lastname">Last Name:</label>
+    <input type="text" id="donor-lastname" name="donor-lastname" required>
+
+    <label for="company">Company:</label>
+    <input type="text" id="company" name="company">
+
+    <label for="address1">Address1:</label>
+    <input type="text" id="address1" name="address1" required>
+
+    <label for="address2">Address2:</label>
+    <input type="text" id="address2" name="address2">
+
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" required>
+
+    <label for="state">State:</label>
+    <select id="state" name="state" required>
+      <option value="">Select a state</option>
+      <option value="dhaka">Dhaka</option>
+      <option value="washington">Washington</option>
+      <option value="london">London</option>
+    </select>
+
+    <label for="zipcode">Zip Code:</label>
+    <input type="text" id="zipcode" name="zipcode" required>
+
+    <label for="country">Country:</label>
+    <select id="country" name="country" required>
+      <option value="">Select a country</option>
+      <option value="bangladesh">Bangladesh</option>
+      <option value="usa">USA</option>
+      <option value="uk">UK</option>
+    </select>
+
+    <label for="phone">Phone:</label>
+    <input type="tel" id="phone" name="phone" placeholder="+8801XXXXXXXXX">
+
+    <label for="fax">Fax:</label>
+    <input type="text" id="fax" name="fax">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <h2>Donation Details</h2>
+
+    <label for="donationamount">Donation Amount:</label>
+    <div class="donationamount" id="donationamount">
+      <input type="radio" id="amount-none" name="donationamount" value="none" required>
+      <label for="amount-none">None</label>
+
+      <input type="radio" id="amount-50" name="donationamount" value="50">
+      <label for="amount-50">$50</label>
+
+      <input type="radio" id="amount-75" name="donationamount" value="75">
+      <label for="amount-75">$75</label>
+
+      <input type="radio" id="amount-100" name="donationamount" value="100">
+      <label for="amount-100">$100</label>
+
+      <input type="radio" id="amount-250" name="donationamount" value="250">
+      <label for="amount-250">$250</label>
+
+      <input type="radio" id="amount-other" name="donationamount" value="other">
+      <label for="amount-other">Other</label>
+
+      <span class="note">(Check a button or type in your amount)</span>
+    </div>
+
+    <label for="otheramount">Other Amount $:</label>
+    <input type="number" id="otheramount" name="otheramount" min="1" step="0.01" placeholder="Enter custom amount" style="display:none;">
+
+    <label for="recurringdonation">Recurring Donation:</label>
+    <input type="checkbox" id="recurringdonation" name="recurringdonation">
+    <label for="recurringdonation" class="inline-label">I am interested in giving on a regular basis</label>
+    <span class="note">(Check if yes)</span>
+
+    <label for="monthlycreditcard">Monthly Credit Card $:</label>
+    <input type="number" id="monthlycreditcard" name="monthlycreditcard" min="0" step="0.01" placeholder="Amount per month">
+
+    <label for="monthlymonths">For (months):</label>
+    <input type="number" id="monthlymonths" name="monthlymonths" min="1" placeholder="Number of months">
+
+    <h2>Honorarium and Memorial Donation Information</h2>
+
+    <label for="donation-type">I would like to make this donation:</label>
+    <div class="honor-group">
+      <input type="radio" id="tohonor" name="donation-type" value="in-honor">
+      <label for="tohonor">To Honor of</label>
+
+      <input type="radio" id="inmemory" name="donation-type" value="in-memory">
+      <label for="inmemory">In Memory of</label>
+    </div>
+
+    <label for="honorname">Name:</label>
+    <input type="text" id="honorname" name="honorname">
+
+    <label for="acknowledgeto">Acknowledge Donation to:</label>
+    <input type="text" id="acknowledgeto" name="acknowledgeto">
+
+    <label for="honoraddress">Address:</label>
+    <input type="text" id="honoraddress" name="honoraddress">
+
+    <label for="honorcity">City:</label>
+    <input type="text" id="honorcity" name="honorcity">
+
+    <label for="honorstate">State:</label>
+    <select id="honorstate" name="honorstate">
+      <option value="">Select a state</option>
+      <option value="dhaka">Dhaka</option>
+      <option value="washington">Washington</option>
+      <option value="london">London</option>
+    </select>
+
+    <label for="honorzipcode">Zip Code:</label>
+    <input type="text" id="honorzipcode" name="honorzipcode">
+
+    <h2>Additional Information</h2>
+    <p>Please enter your name, company or organization as you would like it to appear in our publications:</p>
+
+    <label for="companyname">Name:</label>
+    <input type="text" id="companyname" name="companyname">
+
+    <input type="checkbox" id="anonymous" name="anonymous">
+    <label for="anonymous" class="inline-label">I would like my gift to remain anonymous</label>
+
+    <input type="checkbox" id="mailing" name="mailing">
+    <label for="mailing" class="inline-label">My employer offers a matching gift program. I will mail the matching gift form.</label>
+
+    <input type="checkbox" id="notmailing" name="notmailing">
+    <label for="notmailing" class="inline-label">Please save the cost of acknowledging this gift by not mailing a thank you letter.</label>
+
+    <label for="comments">Comments:</label>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+    <label class="note" for="comments">(Please type any questions or feedback here)</label>
+
+    <label for="choosecontact">How may we contact you?</label>
+    <div class="choose-contact">
+      <input type="checkbox" id="contactemail" name="choosecontact_email">
+      <label for="contactemail">E-mail</label>
+
+      <input type="checkbox" id="contactpostmail" name="choosecontact_post">
+      <label for="contactpostmail">Postal Mail</label>
+
+      <input type="checkbox" id="contactphone" name="choosecontact_phone">
+      <label for="contactphone">Telephone</label>
+
+      <input type="checkbox" id="contactfax" name="choosecontact_fax">
+      <label for="contactfax">Fax</label>
+    </div>
+
+    <label for="newsletters">I would like to receive newsletters and information about special events by:</label>
+    <div class="newsletters">
+      <input type="checkbox" id="newsemail" name="newsletters_email">
+      <label for="newsemail">E-mail</label>
+
+      <input type="checkbox" id="newspostalmail" name="newsletters_post">
+      <label for="newspostalmail">Postal Mail</label>
+    </div>
+
+    <input type="checkbox" id="volunteer" name="volunteer">
+    <label for="volunteer" class="inline-label">I would like information about volunteering with the organization</label>
+
+    <div class="button-group">
+      <button type="reset">Reset</button>
+      <button type="submit">Continue</button>
+    </div>
+
+    <label for="notice" class="notice">Donate online with confidence. You are on a secure server.</label>
+    <p>If you have any problems or questions, please contact support.</p>
+  </form>
+
+  <script>
+    // show/hide "Other Amount" input based on radio selection
+    const otherRadio = document.getElementById('amount-other');
+    const otherAmount = document.getElementById('otheramount');
+    const radios = document.querySelectorAll('input[name="donationamount"]');
+
+    function toggleOtherAmount() {
+      if (otherRadio.checked) {
+        otherAmount.style.display = 'block';
+        otherAmount.required = true;
+      } else {
+        otherAmount.style.display = 'none';
+        otherAmount.required = false;
+        otherAmount.value = '';
+      }
+    }
+
+    radios.forEach(r => r.addEventListener('change', toggleOtherAmount));
+    // run once on load
+    toggleOtherAmount();
+  </script>
+</body>
+</html>
