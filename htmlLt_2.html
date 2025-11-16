@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIUB — Online Admission Form</title>
+</head>
+<body>
+  <h1>AIUB — Online Admission Form</h1>
+  <p>Faculty of Science and Technology (FST) — Department of Computer Science (CS)</p>
+
+  <form id="admissionForm" action="#" method="post" enctype="multipart/form-data">
+
+    <!-- PERSONAL INFORMATION -->
+    <fieldset>
+      <legend>Personal Information</legend>
+
+      <label for="fullName">Full Name *</label><br>
+      <input id="fullName" name="fullName" type="text" maxlength="100" required><br><br>
+
+      <label for="dob">Date of Birth *</label><br>
+      <input id="dob" name="dob" type="date" required><br><br>
+
+      <label>Gender *</label><br>
+      <input type="radio" name="gender" value="Male" required> Male
+      <input type="radio" name="gender" value="Female"> Female
+      <input type="radio" name="gender" value="Other"> Other<br><br>
+
+      <label for="nationality">Nationality</label><br>
+      <input id="nationality" name="nationality" type="text" maxlength="50"><br><br>
+
+      <label for="email">Email Address *</label><br>
+      <input id="email" name="email" type="email" maxlength="100" required><br><br>
+
+      <label for="phone">Phone Number *</label><br>
+      <input id="phone" name="phone" type="tel" maxlength="20" required><br><br>
+
+      <label for="address">Present Address</label><br>
+      <textarea id="address" name="address" rows="3" maxlength="250"></textarea><br><br>
+    </fieldset>
+
+    <!-- ACADEMIC INFORMATION -->
+    <fieldset>
+      <legend>Academic Information</legend>
+
+      <label for="sscInstitute">SSC / Equivalent Institute *</label><br>
+      <input id="sscInstitute" name="sscInstitute" type="text" maxlength="120" required><br><br>
+
+      <label for="sscGpa">SSC GPA *</label><br>
+      <input id="sscGpa" name="sscGpa" type="text" maxlength="5" required><br><br>
+
+      <label for="hscInstitute">HSC / Equivalent Institute *</label><br>
+      <input id="hscInstitute" name="hscInstitute" type="text" maxlength="120" required><br><br>
+
+      <label for="hscGpa">HSC GPA *</label><br>
+      <input id="hscGpa" name="hscGpa" type="text" maxlength="5" required><br><br>
+
+      <label for="gradYear">Year of Graduation</label><br>
+      <select id="gradYear" name="gradYear">
+        <option value="">-- Select year --</option>
+        <option>2025</option>
+        <option>2024</option>
+        <option>2023</option>
+        <option>2022</option>
+        <option>2021</option>
+        <option>2020</option>
+        <option>2019</option>
+      </select><br><br>
+
+      <label for="previousDegree">Previous Degree (if any)</label><br>
+      <input id="previousDegree" name="previousDegree" type="text" maxlength="100"><br><br>
+    </fieldset>
+
+    <!-- PROGRAM & INTERESTS -->
+    <fieldset>
+      <legend>Program & Interests</legend>
+
+      <label for="department">Preferred Department *</label><br>
+      <select id="department" name="department" required>
+        <option value="">-- Select Department --</option>
+        <option>Computer Science & Engineering (CSE)</option>
+        <option>Software Engineering (SE)</option>
+        <option>Electrical & Electronic Engineering (EEE)</option>
+        <option>Business Administration (BBA)</option>
+        <option>Architecture (ARCH)</option>
+      </select><br><br>
+
+      <label for="course">Preferred Program</label><br>
+      <select id="course" name="course">
+        <option value="">-- Select Course --</option>
+        <option>BSc (Hons)</option>
+        <option>MSc</option>
+        <option>Diploma</option>
+      </select><br><br>
+
+      <label>Interests (choose any)</label><br>
+      <input type="checkbox" name="interest" value="AI"> Artificial Intelligence<br>
+      <input type="checkbox" name="interest" value="WebDev"> Web Development<br>
+      <input type="checkbox" name="interest" value="Data"> Data Science<br>
+      <input type="checkbox" name="interest" value="Networks"> Networking<br>
+      <input type="checkbox" name="interest" value="Research"> Research<br><br>
+    </fieldset>
+
+    <!-- DOCUMENT UPLOADS -->
+    <fieldset>
+      <legend>Upload Documents</legend>
+
+      <label for="photo">Passport-size Photo * (jpg/png)</label><br>
+      <input id="photo" name="photo" type="file" accept="image/png,image/jpeg" required><br><br>
+
+      <label for="transcript">Transcript / Marksheet * (PDF)</label><br>
+      <input id="transcript" name="transcript" type="file" accept="application/pdf" required><br><br>
+
+      <label for="resume">Resume / CV (optional)</label><br>
+      <input id="resume" name="resume" type="file" accept="application/pdf,.doc,.docx"><br><br>
+
+      <label for="additional">Additional Information</label><br>
+      <textarea id="additional" name="additional" rows="4" maxlength="800"></textarea><br><br>
+    </fieldset>
+
+    <!-- BUTTONS -->
+    <button type="reset">Reset</button>
+    <button type="submit">Submit Application</button>
+
+  </form>
+</body>
+</html>
