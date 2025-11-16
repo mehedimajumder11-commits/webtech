@@ -1,177 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MD MEHEDI HASAN — Portfolio</title>
-
-  <!-- Metadata required by the task -->
-  <meta name="author" content="MD MEHEDI HASAN">
-  <meta name="description" content="MD MEHEDI HASAN — Computer Science student at AIUB. Personal portfolio with education, hobbies and contact information.">
-  <meta name="keywords" content="MD MEHEDI HASAN, AIUB, portfolio, web developer, computer science">
-
-  <!-- External CSS (general layout & components) -->
-  <link rel="stylesheet" href="Lt_2.css">
-
-  <!-- Internal CSS required by Lab Task 02 (colorful multi-section About page) -->
-  <style>
-    /* shared section styles */
-    .color-section {
-      border-radius: 8px;
-      padding: 1.25rem;
-      margin: 1.25rem 0;
-      color: #111827;
-    }
-
-    /* unique backgrounds (three main sections) */
-    #about-section.color-section { background: #ffd6d6; }           /* soft red/pink */
-    #education-section.color-section { background: #d6fff0; }       /* soft green */
-    #hobbies-section.color-section { background: #fff6d6; }         /* soft yellow */
-
-    /* custom horizontal rules (separators) */
-    hr.section-sep {
-      border: none;
-      height: 8px;               /* custom height */
-      width: 60%;                /* custom width */
-      margin: 0.5rem auto 1.25rem auto;
-      border-radius: 4px;
-      background: linear-gradient(90deg, rgba(0,0,0,0.08), rgba(0,0,0,0.02));
-    }
-
-    /* custom colors for separators so each pair looks good */
-    hr.sep-about { background: #ff9b9b; }      /* matches about */
-    hr.sep-education { background: #6fe9cf; } /* matches education */
-    hr.sep-hobbies { background: #ffe58a; }   /* matches hobbies */
-
-    /* spacing tweaks for the content inside the colored sections */
-    .color-section h2 { margin-top: 0; font-size: 1.4rem; }
-    .color-section p { margin: 0.5rem 0; }
-
-    /* smaller screens: slightly tighter spacing */
-    @media (max-width: 600px) {
-      .color-section { padding: 0.9rem; margin: 1rem 0; }
-      hr.section-sep { width: 80%; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="author" content="Your Name">
+  <meta name="description" content="Personal portfolio of a computer science student seeking internships.">
+  <meta name="keywords" content="portfolio, computer science, internship, resume, contact">
+  <title>Your Name — Portfolio</title>
 </head>
 <body>
-
-  <!-- HEADER -->
   <header>
-    <div class="wrap">
-      <h1 class="site-title">MD MEHEDI HASAN</h1>
-      <p class="tagline">Computer Science Student — American International University-Bangladesh (AIUB)</p>
-
-      <nav class="main-nav">
-        <a href="#about-section">About</a>
-        <a href="#hobbies-section">Hobbies</a>
-        <a href="#skills">Skills</a>
-        <a href="#education-section">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
+    <h1>Your Name</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main class="wrap">
-
-    <!-- ABOUT (div with unique id and class) -->
-    <div id="about-section" class="color-section">
+  <main>
+    <section id="about">
       <h2>About Me</h2>
-      <p>Hello! I'm <strong>MD MEHEDI HASAN</strong>, a Computer Science student at AIUB. I am learning web development, algorithms, and software engineering. This portfolio showcases my academic background, skills, and hobbies.</p>
-    </div>
+      <p>I am a computer science student interested in software development and data science. I enjoy building projects, learning new technologies, and contributing to team-focused work.</p>
+    </section>
 
-    <!-- custom separator -->
-    <hr class="section-sep sep-about" />
-
-    <!-- EDUCATION (div with unique id and class) -->
-    <div id="education-section" class="color-section">
+    <section id="education">
       <h2>Education</h2>
-      <p>Below is a summary of my academic qualifications and current studies.</p>
-
-      <table>
+      <table border="1" cellpadding="6" cellspacing="0">
+        <caption>Educational Qualifications</caption>
         <thead>
           <tr>
-            <th>Degree</th>
+            <th>Level</th>
             <th>Institution</th>
-            <th>Years</th>
-            <th>Result / CGPA</th>
+            <th>Year</th>
+            <th>Result / Major</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>B.Sc. in Computer Science</td>
+            <td>BSc (Hons)</td>
             <td>American International University-Bangladesh (AIUB)</td>
-            <td>2022 — Present</td>
-            <td>In progress</td>
+            <td>2022 - Present</td>
+            <td>Computer Science</td>
           </tr>
           <tr>
             <td>HSC</td>
-            <td>Your College Name</td>
-            <td>2020 — 2022</td>
-            <td>GPA: 4.xx</td>
+            <td>Example College</td>
+            <td>2020</td>
+            <td>Science</td>
           </tr>
           <tr>
             <td>SSC</td>
-            <td>Your School Name</td>
-            <td>2018 — 2020</td>
-            <td>GPA: 5.00</td>
+            <td>Example School</td>
+            <td>2018</td>
+            <td>Science</td>
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <!-- custom separator -->
-    <hr class="section-sep sep-education" />
-
-    <!-- HOBBIES (formerly Projects) - div with unique id and class -->
-    <div id="hobbies-section" class="color-section">
-      <h2>Hobbies</h2>
-
-      <!-- Inline style example required by the lab -->
-      <p style="color: blue;">I enjoy a mix of technical and creative hobbies — coding small projects, solving algorithms, photography, and playing guitar.</p>
-
-      <ul>
-        <li>Coding mini-projects (practice & portfolio)</li>
-        <li>Photography — landscape & street</li>
-        <li>Playing guitar and listening to music</li>
-        <li>Problem solving and competitive programming practice</li>
-      </ul>
-    </div>
-
-    <!-- custom separator -->
-    <hr class="section-sep sep-hobbies" />
-
-    <!-- SKILLS (kept as part of the portfolio; not one of the three required color sections) -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML5 & Semantic Markup</li>
-        <li>CSS3 (Responsive Design)</li>
-        <li>JavaScript (DOM, fetch)</li>
-        <li>Git & GitHub</li>
-      </ul>
     </section>
 
-    <!-- CONTACT (info only, no form) -->
     <section id="contact">
       <h2>Contact Me</h2>
-      <p>If you’d like to get in touch, you can reach me at:</p>
-      <p><strong>Phone:</strong> <a href="tel:+8801755555555">+8801755555555</a></p>
-      <p><strong>Email:</strong> <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    </section>
+      <form action="#" method="post">
+        <label for="visitor-name">Name:</label><br>
+        <input id="visitor-name" name="name" type="text" maxlength="100" required><br><br>
 
+        <label for="visitor-email">Email:</label><br>
+        <input id="visitor-email" name="email" type="email" maxlength="100" required><br><br>
+
+        <label for="visitor-message">Message:</label><br>
+        <textarea id="visitor-message" name="message" rows="5" maxlength="800" required></textarea><br><br>
+
+        <button type="reset">Reset</button>
+        <button type="submit">Send</button>
+      </form>
+    </section>
   </main>
 
-  <!-- FOOTER -->
   <footer>
-    <div class="wrap">
-      <p>© <span id="year"></span> MD MEHEDI HASAN — AIUB (FST, Dept. of CSE)</p>
-    </div>
+    <p>© 2025 Your Name</p>
   </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
+
+<!-- Lab task 5 -->
+
