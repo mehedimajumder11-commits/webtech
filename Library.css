@@ -1,0 +1,86 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 12px;
+  color: #000;
+}
+
+/* Header similar to screenshot (no image) */
+.page-header h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+/* Input row styling */
+.input-row {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.input-row label {
+  font-size: 14px;
+}
+
+.input-row input[type="text"] {
+  padding: 4px 6px;
+  font-size: 13px;
+  border: 1px solid #aaa;
+}
+
+.input-row button {
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.error {
+  color: #b00020;
+  font-size: 13px;
+  margin-left: 8px;
+}
+
+.list-heading {
+  margin-top: 18px;
+  font-size: 20px;
+}
+
+/* Table styling */
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.book-table thead th {
+  background: #fff;
+  border-bottom: 2px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.book-table td {
+  padding: 8px;
+  border: 1px solid #eee;
+}
+
+/* Row colors */
+.book-table tr.old td {
+  background-color: lightgray;
+}
+
+.book-table tr.newer td {
+  background-color: lightgreen;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+  .input-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .error {
+    margin-left: 0;
+  }
+}

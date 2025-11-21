@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* CONTACT WIDGET */
+.contact-widget {
+    position: fixed;             /* stays in place while scrolling */
+    bottom: 20px;                /* distance from bottom */
+    right: 20px;                 /* distance from right */
+    background-color: #0b6bff;   /* blue background */
+    color: white;
+    padding: 15px 20px;          /* inner spacing */
+    border-radius: 10px;         /* rounded corners */
+    border: 2px solid white;     /* white border */
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+    z-index: 999;                /* stays on top */
+    width: 180px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+/* HOVER EFFECT */
+.contact-widget:hover {
+    background-color: #004dc1;
+    cursor: pointer;
+}
+
+/* Email link inside widget */
+.contact-widget a {
+    color: #ffeb3b;
+    text-decoration: none;
+    font-weight: bold;
+}

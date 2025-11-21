@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Product Information Boxes</title>
+
+  <style>
+    /* Page basics */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f6f7fb;
+      margin: 20px;
+      color: #222;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    /* Container to keep boxes centered on page */
+    .products-container {
+      text-align: center; /* centers inline-block boxes horizontally */
+    }
+
+    /* Product box common styles */
+    .product-box {
+      display: inline-block;           /* required by the lab */
+      width: 260px;                    /* fixed width so boxes line up */
+      vertical-align: top;
+      background: #ffffff;             /* box background */
+      border: 1px solid #d6d9e6;       /* subtle border */
+      border-radius: 8px;
+      padding: 14px;                   /* inner padding */
+      margin: 12px;                    /* space between boxes */
+      box-sizing: border-box;          /* include padding in width */
+      text-align: center;              /* center contents inside */
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    /* Product image styling (small image) */
+    .product-box img {
+      width: 140px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
+
+    /* Headings & text */
+    .product-name {
+      font-size: 1.05rem;
+      margin: 6px 0;
+      color: #1a2930;
+    }
+
+    .product-desc {
+      font-size: 0.92rem;
+      color: #4b5563;
+      margin: 6px 0 10px 0;
+      min-height: 38px; /* keep heights similar */
+    }
+
+    .product-price {
+      font-weight: 700;
+      color: #0b6b4f;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .buy-now {
+      display: inline-block;
+      padding: 8px 14px;
+      text-decoration: none;
+      border-radius: 6px;
+      background: #0b6bff;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Hover outline effect + subtle lift */
+    .product-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(20, 30, 60, 0.08);
+      outline: 3px solid rgba(11, 107, 255, 0.18);
+      outline-offset: 6px;
+    }
+
+    /* Make sure outline appears for keyboard focus as well */
+    .product-box:focus-within {
+      outline: 3px solid rgba(11, 107, 255, 0.18);
+      outline-offset: 6px;
+    }
+
+    /* Responsive: stack boxes on narrow screens */
+    @media (max-width: 760px) {
+      .product-box {
+        display: block;
+        width: calc(100% - 40px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .products-container { text-align: left; padding: 0 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ElectroShop — Featured Products</h1>
+    <p>Neat product cards with spacing, borders, and hover outlines</p>
+  </header>
+
+  <main class="products-container" role="main" aria-label="Products">
+    <!-- Product 1 -->
+    <section class="product-box" aria-labelledby="p1">
+      <img src="https://images.pexels.com/photos/18105/pexels-photo.jpg?w=640&h=480&auto=compress&cs=tinysrgb" alt="Laptop image">
+      <h2 id="p1" class="product-name">Ultra Laptop 14"</h2>
+      <p class="product-desc">Lightweight 14-inch laptop, Intel i5, 8GB RAM — perfect for work & study.</p>
+      <div class="product-price">$899.00</div>
+      <a class="buy-now" href="#" title="Buy Ultra Laptop 14">Buy Now</a>
+    </section>
+
+    <!-- Product 2 (Headphones) - uses embedded SVG data URI so it will always display -->
+    <section class="product-box" aria-labelledby="p2">
+      <!-- SVG headphone icon embedded as data URI (no external fetch) -->
+      <img src="data:image/svg+xml;utf8,
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'>
+        <g fill='%230b6bff'>
+          <path d='M32 6C18.745 6 8 16.745 8 30v8a6 6 0 0 0 6 6h2a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-2c0-9.941 8.059-18 18-18s18 8.059 18 18h-2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2a6 6 0 0 0 6-6v-8C56 16.745 45.255 6 32 6z'/>
+          <rect x='6' y='34' width='8' height='18' rx='3' ry='3' fill='%230b6bff'/>
+          <rect x='50' y='34' width='8' height='18' rx='3' ry='3' fill='%230b6bff'/>
+        </g>
+      </svg>" alt="Headphones image">
+      <h2 id="p2" class="product-name">Studio Headphones</h2>
+      <p class="product-desc">Over-ear headphones with deep bass and noise isolation for immersive sound.</p>
+      <div class="product-price">$129.00</div>
+      <a class="buy-now" href="#" title="Buy Studio Headphones">Buy Now</a>
+    </section>
+
+    <!-- Product 3 -->
+    <section class="product-box" aria-labelledby="p3">
+      <img src="https://images.pexels.com/photos/277394/pexels-photo-277394.jpeg?w=640&h=480&auto=compress&cs=tinysrgb" alt="Smartwatch image">
+      <h2 id="p3" class="product-name">Smartwatch Fit</h2>
+      <p class="product-desc">Compact smartwatch with heart-rate monitor, notifications and 7-day battery.</p>
+      <div class="product-price">$159.00</div>
+      <a class="buy-now" href="#" title="Buy Smartwatch Fit">Buy Now</a>
+    </section>
+  </main>
+
+  <footer style="text-align:center; margin-top:20px; color:#55606a;">
+    <small>© 2025 ElectroShop</small>
+  </footer>
+</body>
+</html>

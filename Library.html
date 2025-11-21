@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Library Management System</title>
+  <link rel="stylesheet" href="Library.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Library Management System</h1>
+  </header>
+
+  <main>
+    <form id="bookForm" class="input-row" novalidate>
+      <label for="title">Book Title:</label>
+      <input id="title" type="text" placeholder="Enter book title" aria-label="Book Title">
+
+      <label for="year">Publication Year:</label>
+      <input id="year" type="text" placeholder="Enter publication year" aria-label="Publication Year">
+
+      <button id="addBtn" type="submit">Add Book</button>
+      <div id="error" class="error" aria-live="polite"></div>
+    </form>
+
+    <h2 class="list-heading">Book List</h2>
+
+    <table id="booksTable" class="book-table" aria-label="Book list">
+      <thead>
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example row matching your screenshot -->
+        <tr class="newer">
+          <td>ABC</td>
+          <td>2022</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+  <script>
+    (function () {
+      const form = document.getElementById('bookForm');
+      const titleInput = document.getElementById('title');
+      const yearInput = document.getElementById('year');
+      const errorDiv = document.getElementById('error');
+      const tableBody = document.querySelector('#booksTable tbody');
+      const currentYear = new Date().getFullYear();
+
+      function validateTitle(title) {
+        if (!title) return 'Title must not be empty.';
+        if (!/^[A-Za-z]+$/.test(title)) {
+          return 'Title must contain only alphabetic characters (A–Z) with no spaces.';
+        }
+        return '';
+      }
+
+      function validateYear(yearStr) {
+        if (!/^\d{4}$/.test(yearStr)) return 'Year must be a 4-digit number.';
+        const year = Number(yearStr);
+        if (year < 1900 || year > currentYear)
+          return `Year must be between 1900 and ${currentYear}.`;
+        return '';
+      }
+
+      form.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        errorDiv.textContent = '';
+
+        const title = titleInput.value.trim();
+        const yearStr = yearInput.value.trim();
+
+        const tErr = validateTitle(title);
+        const yErr = validateYear(yearStr);
+
+        if (tErr || yErr) {
+          errorDiv.textContent = tErr || yErr;
+          return;
+        }
+
+        const year = Number(yearStr);
+
+        const tr = document.createElement('tr');
+        tr.classList.add(year < 2000 ? 'old' : 'newer');
+
+        const tdTitle = document.createElement('td');
+        tdTitle.textContent = title;
+        const tdYear = document.createElement('td');
+        tdYear.textContent = String(year);
+
+        tr.appendChild(tdTitle);
+        tr.appendChild(tdYear);
+
+        tableBody.appendChild(tr);
+
+        titleInput.value = '';
+        yearInput.value = '';
+        titleInput.focus();
+      });
+    })();
+  </script>
+</body>
+</html>
