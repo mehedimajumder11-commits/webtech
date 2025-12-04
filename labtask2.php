@@ -33,4 +33,5 @@ switch ($day) {
         echo "Sunday";
         break;
 }
+//labtask2.php
 ?>
